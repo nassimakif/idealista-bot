@@ -2,12 +2,14 @@ name: Idealista Bot
 
 on:
   schedule:
-    - cron: '0 * * * *'  # toutes les heures
-  workflow_dispatch:       # déclenchement manuel possible
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
   check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
